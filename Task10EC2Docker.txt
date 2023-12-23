@@ -1,0 +1,31 @@
+Steps followed to launch EC2 and Install docker, run basic commands
+
+Step1: sign in to aws account
+step2: Search for EC2 and click launch instance
+Step3: Provide Name, Select Image for instance
+Step4: Selected instance type as t2.micro and key pair created
+Step5: Select Security group and EBS volume.
+Step6: Review and click launch instance
+Step7: edit security inbound rule and add ssh port 22, Copy Public IP of EC2 instance and SSH from local machine
+navigate to the keypair location and run command
+Command: ssh -i keypair.pem ec2-user@publicIP
+
+Step 8: from Ec2 instance install docker
+Command: sudo yum install docker
+
+i have tried following commands
+
+check version : docker --version
+process check: docker ps, docker ps -a
+pull image: docker pull imagename
+run container: docker run imagename 
+list images: docker images
+list container docker ps
+list container with only container id : docker ps -aq
+inspect conatiner: docker inspect container id
+remove conatiner : docker rm container id
+remove running container: docker rm -f conatiner id
+remove all running container: docker rm -f $(docker pa -aq)
+remove images: docker rmi imagename
+
+system cleanup: uninstalled docker, stopped and terminated EC2
