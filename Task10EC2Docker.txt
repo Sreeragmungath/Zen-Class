@@ -18,7 +18,10 @@ i have tried following commands
 check version : docker --version
 process check: docker ps, docker ps -a
 pull image: docker pull imagename
-run container: docker run imagename 
+run container: docker run imagename
+run in detach mode : docker run -d imagename:version
+name the container : --name
+use port mapping: docker run -d --name nameofcontainer -p hostport:container port imagename:version 
 list images: docker images
 list container docker ps
 list container with only container id : docker ps -aq
